@@ -1,0 +1,9 @@
+# Ignorar archivos de logs
+*.log
+
+# Ignorar directorio de logs
+logs/
+
+# Ignorar archivos de configuración
+Prueba/
+./Prueba
