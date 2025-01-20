@@ -1,6 +1,6 @@
-package unpa.estancias.service;
+package com.example.prediccion.service;
 
-import unpa.estancias.entity.Iris;
+import  com.example.prediccion.entity.*;
 
 public interface IrisService {
     public String prediccion(Iris iris);

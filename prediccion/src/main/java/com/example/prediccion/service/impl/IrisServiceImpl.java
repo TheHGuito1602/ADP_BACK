@@ -1,8 +1,8 @@
-package unpa.estancias.service.impl;
+package com.example.prediccion.service.impl;
 
 import org.springframework.stereotype.Service;
-import unpa.estancias.entity.Iris;
-import unpa.estancias.service.IrisService;
+import com.example.prediccion.entity.Iris;
+import com.example.prediccion.service.IrisService;
 
 @Service
 public class IrisServiceImpl implements IrisService {

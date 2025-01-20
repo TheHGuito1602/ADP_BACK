@@ -1,5 +1,4 @@
-import jakarta.persistence.Entity;
-
+package com.example.prediccion.entity;
 import lombok.AllArgsConstructor;
 
 import lombok.Data;
@@ -8,11 +7,13 @@ import lombok.NoArgsConstructor;
 
 import lombok.Builder;
 
+import java.io.Serializable;
+
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class Zoo implements Serializable{
+public class Zoo implements Serializable {
     private int hair;
     private int feathers;
     private int eggs;

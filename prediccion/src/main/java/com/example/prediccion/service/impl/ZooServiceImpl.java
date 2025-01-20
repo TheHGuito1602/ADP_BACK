@@ -1,8 +1,8 @@
-package unpa.estancias.service.impl;
+package com.example.prediccion.service.impl;
 
 import org.springframework.stereotype.Service;
-import unpa.estancias.entity.Zoo;
-import unpa.estancias.service.ZooService;
+import com.example.prediccion.entity.Zoo;
+import com.example.prediccion.service.ZooService;
 
 @Service
 public class ZooServiceImpl implements ZooService {
