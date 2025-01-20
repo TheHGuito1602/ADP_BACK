@@ -1,14 +1,14 @@
 package com.example.prediccion.controller;
 
+import com.example.prediccion.entity.Iris;
 import com.example.prediccion.entity.PrediccionResponse;
+import com.example.prediccion.service.IrisService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import com.example.prediccion.service.IrisService;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "http://localhost:4200")
 @Log4j2
 @RestController
 @RequestMapping("/iris")
@@ -16,9 +16,9 @@ import com.example.prediccion.service.IrisService;
 public class IrisController {
     private final IrisService irisService;
 
-    @GetMapping("/prediccion")
-    public ResponseEntity<PrediccionResponse> prediccion() {
-        PrediccionResponse response = new PrediccionResponse("Predicción exitosa");
+    @PostMapping("/prediccion")
+    public ResponseEntity<PrediccionResponse> prediccion(@RequestBody Iris iris) {
+        PrediccionResponse response = irisService.prediccion(iris);
         return ResponseEntity.ok(response);
     }
 }
