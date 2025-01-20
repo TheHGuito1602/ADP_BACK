@@ -12,16 +12,18 @@ import org.springframework.web.bind.annotation.*;
 public class IrisController {
     private final IrisService irisService;
     private final IrisDomainService irisDomainService;
+
     public IrisController(IrisService irisService, IrisDomainService irisDomainService) {
         this.irisService = irisService;
         this.irisDomainService = irisDomainService;
-
     }
 
     @PostMapping(value = "/prediccion", produces = "application/json")
     public ResponseEntity<String> prediccion(@RequestBody Iris iris) {
         String response = irisService.prediccion(iris);
-        //llamar al domain para que me traiga el porcentaje mas alto y la clase a la que pertenece
-        return ResponseEntity.ok(response);
+        // Call the domain service to get the highest probability class
+        String highestProbabilityClass = irisDomainService.filtrar(response);
+
+        return ResponseEntity.ok(highestProbabilityClass);
     }
 }
