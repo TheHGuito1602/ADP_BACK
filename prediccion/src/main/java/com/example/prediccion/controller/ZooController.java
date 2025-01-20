@@ -20,6 +20,7 @@ public class ZooController {
     @PostMapping(value="/prediccion", produces = "application/json")
     public ResponseEntity<String> prediccion(@RequestBody Zoo zoo) {
         String response = zooService.prediccion(zoo);
+        //llamar al domain para que me traiga el porcentaje mas alto y la clase a la que pertenece
         return ResponseEntity.ok(response);
     }
 }
