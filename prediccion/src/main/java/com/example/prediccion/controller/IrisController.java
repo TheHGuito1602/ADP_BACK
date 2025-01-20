@@ -1,7 +1,6 @@
 package com.example.prediccion.controller;
 
 import com.example.prediccion.entity.Iris;
-import com.example.prediccion.entity.PrediccionResponse;
 import com.example.prediccion.service.IrisService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,8 +16,8 @@ public class IrisController {
     }
 
     @PostMapping(value = "/prediccion", produces = "application/json")
-    public ResponseEntity<PrediccionResponse> prediccion(@RequestBody Iris iris) {
-        PrediccionResponse response = irisService.prediccion(iris);
+    public ResponseEntity<String> prediccion(@RequestBody Iris iris) {
+        String response = irisService.prediccion(iris);
         return ResponseEntity.ok(response);
     }
 }
