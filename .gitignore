@@ -7,3 +7,7 @@ logs/
 # Ignorar archivos de configuración
 Prueba/
 ./Prueba
+
+venv/
+../path/
+python3/
